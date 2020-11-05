@@ -160,10 +160,6 @@ main {
   margin: 5rem auto;
 }
 
-.loading {
-  text-align: center;
-}
-
 .title {
   text-align: center;
   margin-bottom: 4rem;
