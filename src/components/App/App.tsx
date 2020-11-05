@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Loading, Tours } from '../../components';
-import { Tour } from '../../models/tour.model';
+import { TourModel } from '../../models/tour.model';
 
 const url = 'https://course-api.com/react-tours-project';
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
-  const [tours, setTours] = useState<Tour[]>([]);
+  const [tours, setTours] = useState<TourModel[]>([]);
 
   const fetchTours = async () => {
     setLoading(true);

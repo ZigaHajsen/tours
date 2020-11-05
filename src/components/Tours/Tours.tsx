@@ -1,12 +1,25 @@
 import React from 'react';
-import { Tour } from '../../models/tour.model';
+import { Tour } from '../../components';
+import { TourModel } from '../../models/tour.model';
 
 interface ToursProps {
-  tours: Tour[];
+  tours: TourModel[];
 }
 
 const Tours: React.FC<ToursProps> = ({ tours }) => {
-  return <div>tours component</div>;
+  return (
+    <section>
+      <div className='title'>
+        <h2>our tours</h2>
+        <div className='underline'></div>
+      </div>
+      <div>
+        {tours.map((tour: TourModel) => {
+          return <Tour key={tour.id} tour={tour}></Tour>;
+        })}
+      </div>
+    </section>
+  );
 };
 
 export default Tours;
