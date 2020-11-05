@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Loading } from '../../components';
+import { Loading, Tours } from '../../components';
 
 const url = 'https://course-api.com/react-tours-project';
 
@@ -14,7 +14,11 @@ const App: React.FC = () => {
       </main>
     );
   }
-  return <h2>tours project setup</h2>;
+  return (
+    <main>
+      <Tours />
+    </main>
+  );
 };
 
 export default App;
