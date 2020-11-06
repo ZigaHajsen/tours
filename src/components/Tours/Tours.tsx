@@ -4,9 +4,10 @@ import { TourModel } from '../../models/tour.model';
 
 interface ToursProps {
   tours: TourModel[];
+  removeTour: Function;
 }
 
-const Tours: React.FC<ToursProps> = ({ tours }) => {
+const Tours: React.FC<ToursProps> = ({ tours, removeTour }) => {
   return (
     <section>
       <div className='title'>
@@ -15,7 +16,9 @@ const Tours: React.FC<ToursProps> = ({ tours }) => {
       </div>
       <div>
         {tours.map((tour: TourModel) => {
-          return <Tour key={tour.id} tour={tour}></Tour>;
+          return (
+            <Tour key={tour.id} tour={tour} removeTour={removeTour}></Tour>
+          );
         })}
       </div>
     </section>

@@ -8,6 +8,11 @@ const App: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [tours, setTours] = useState<TourModel[]>([]);
 
+  const removeTour = (id: string) => {
+    const newTours = tours.filter((tour) => tour.id !== id);
+    setTours(newTours);
+  };
+
   const fetchTours = async () => {
     setLoading(true);
 
@@ -35,7 +40,7 @@ const App: React.FC = () => {
   }
   return (
     <main>
-      <Tours tours={tours} />
+      <Tours tours={tours} removeTour={removeTour} />
     </main>
   );
 };

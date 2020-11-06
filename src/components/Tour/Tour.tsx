@@ -3,10 +3,12 @@ import { TourModel } from '../../models/tour.model';
 
 interface TourProps {
   tour: TourModel;
+  removeTour: Function;
 }
 
 const Tour: React.FC<TourProps> = ({
   tour: { id, name, info, image, price },
+  removeTour,
 }) => {
   const [readMore, setReadMore] = useState<boolean>(false);
 
@@ -24,7 +26,9 @@ const Tour: React.FC<TourProps> = ({
             {readMore ? 'show less' : 'show more'}
           </button>
         </p>
-        <button className='delete-btn'>not interested</button>
+        <button className='delete-btn' onClick={() => removeTour(id)}>
+          not interested
+        </button>
       </footer>
     </article>
   );
