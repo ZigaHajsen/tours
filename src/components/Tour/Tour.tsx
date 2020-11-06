@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TourModel } from '../../models/tour.model';
 
 interface TourProps {
@@ -8,6 +8,8 @@ interface TourProps {
 const Tour: React.FC<TourProps> = ({
   tour: { id, name, info, image, price },
 }) => {
+  const [readMore, setReadMore] = useState<boolean>(false);
+
   return (
     <article className='single-tour'>
       <img src={image} alt={name} />
@@ -16,7 +18,12 @@ const Tour: React.FC<TourProps> = ({
           <h4>{name}</h4>
           <h4 className='tour-price'>${price}</h4>
         </div>
-        <p>{info}</p>
+        <p>
+          {readMore ? info : `${info.substring(0, 200)}...`}
+          <button onClick={() => setReadMore(!readMore)}>
+            {readMore ? 'show less' : 'show more'}
+          </button>
+        </p>
         <button className='delete-btn'>not interested</button>
       </footer>
     </article>
