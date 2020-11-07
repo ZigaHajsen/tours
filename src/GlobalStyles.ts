@@ -128,24 +128,10 @@ p {
   }
 }
 
-.section {
-  width: 90vw;
-  margin: 0 auto;
-  max-width: var(--max-width);
-}
-
 @media screen and (min-width: 992px) {
   .section {
     width: 95vw;
   }
-}
-
-.underline {
-  width: 6rem;
-  height: 0.25rem;
-  background: var(--clr-primary-5);
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .single-tour {

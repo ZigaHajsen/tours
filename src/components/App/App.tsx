@@ -43,11 +43,9 @@ const App: React.FC = () => {
   if (tours.length === 0) {
     return (
       <Main>
-        <Title className='title'>
+        <Title>
           <TitleText>no tours left</TitleText>
-          <Button className='btn' onClick={fetchTours}>
-            refresh
-          </Button>
+          <Button onClick={fetchTours}>refresh</Button>
         </Title>
       </Main>
     );
