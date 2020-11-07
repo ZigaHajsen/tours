@@ -140,31 +140,6 @@ p {
   }
 }
 
-.btn {
-  background: var(--clr-primary-5);
-  display: inline-block;
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--radius);
-  text-transform: capitalize;
-  color: var(--clr-white);
-  letter-spacing: var(--spacing);
-  border-color: transparent;
-  cursor: pointer;
-  margin-top: 2rem;
-  font-size: 1.2rem;
-}
-
-main {
-  width: 90vw;
-  max-width: var(--fixed-width);
-  margin: 5rem auto;
-}
-
-.title {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
 .underline {
   width: 6rem;
   height: 0.25rem;

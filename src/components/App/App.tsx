@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Loading, Tours } from '../../components';
 import { TourModel } from '../../models/tour.model';
+import { Main, Title, TitleText, Button } from './styles/AppStyle';
 
 const url = 'https://course-api.com/react-tours-project';
 
@@ -33,29 +34,29 @@ const App: React.FC = () => {
 
   if (loading) {
     return (
-      <main>
+      <Main>
         <Loading />
-      </main>
+      </Main>
     );
   }
 
   if (tours.length === 0) {
     return (
-      <main>
-        <div className='title'>
-          <h2>no tours left</h2>
-          <button className='btn' onClick={fetchTours}>
+      <Main>
+        <Title className='title'>
+          <TitleText>no tours left</TitleText>
+          <Button className='btn' onClick={fetchTours}>
             refresh
-          </button>
-        </div>
-      </main>
+          </Button>
+        </Title>
+      </Main>
     );
   }
 
   return (
-    <main>
+    <Main>
       <Tours tours={tours} removeTour={removeTour} />
-    </main>
+    </Main>
   );
 };
 
