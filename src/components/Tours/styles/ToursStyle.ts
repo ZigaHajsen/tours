@@ -1,10 +1,6 @@
 import styled from 'styled-components/macro';
 
-export const Section = styled.section`
-  width: 90vw;
-  margin: 0 auto;
-  max-width: var(--max-width);
-`;
+export const Section = styled.section``;
 
 export const Title = styled.div`
   text-align: center;

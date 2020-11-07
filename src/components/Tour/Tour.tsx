@@ -1,5 +1,16 @@
 import React, { useState } from 'react';
 import { TourModel } from '../../models/tour.model';
+import {
+  Article,
+  Image,
+  Footer,
+  TourInfo,
+  Name,
+  Price,
+  Paragraph,
+  Button,
+  DeleteButton,
+} from './styles/TourStyles';
 
 interface TourProps {
   tour: TourModel;
@@ -13,24 +24,24 @@ const Tour: React.FC<TourProps> = ({
   const [readMore, setReadMore] = useState<boolean>(false);
 
   return (
-    <article className='single-tour'>
-      <img src={image} alt={name} />
-      <footer>
-        <div className='tour-info'>
-          <h4>{name}</h4>
-          <h4 className='tour-price'>${price}</h4>
-        </div>
-        <p>
+    <Article>
+      <Image src={image} alt={name} />
+      <Footer>
+        <TourInfo>
+          <Name>{name}</Name>
+          <Price className='tour-price'>${price}</Price>
+        </TourInfo>
+        <Paragraph>
           {readMore ? info : `${info.substring(0, 200)}...`}
-          <button onClick={() => setReadMore(!readMore)}>
+          <Button onClick={() => setReadMore(!readMore)}>
             {readMore ? 'show less' : 'show more'}
-          </button>
-        </p>
-        <button className='delete-btn' onClick={() => removeTour(id)}>
+          </Button>
+        </Paragraph>
+        <DeleteButton className='delete-btn' onClick={() => removeTour(id)}>
           not interested
-        </button>
-      </footer>
-    </article>
+        </DeleteButton>
+      </Footer>
+    </Article>
   );
 };
 
